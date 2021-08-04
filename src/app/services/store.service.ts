@@ -36,4 +36,7 @@ export class StoreService {
     return this.http.post(`${baseUrl}delete-all-stores`,{});
   }
 
+  findByTitle(storeName): Observable<any> {
+    return this.http.get(`${baseUrl}filter-by-name?key=${storeName}`);
+  }
 }

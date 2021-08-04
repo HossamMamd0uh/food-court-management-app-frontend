@@ -65,4 +65,16 @@ export class StoresListComponent implements OnInit {
           console.log(error);
         });
   }
+
+  searchTitle(): void {
+    this.StoreService.findByTitle(this.storeName)
+      .subscribe(
+        data => {
+          this.stores = data.data;
+          
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }

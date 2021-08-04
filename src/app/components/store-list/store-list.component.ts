@@ -25,7 +25,7 @@ export class StoresListComponent implements OnInit {
       .subscribe(
         data => {
           this.stores = data.data ;
-          console.log(data.data);
+          
         },
         error => {
           console.log(error);
@@ -41,5 +41,28 @@ export class StoresListComponent implements OnInit {
   setActiveStore(store, index): void {
     this.currentStore = store;
     this.currentIndex = index;
+  }
+
+  deleteStore(): void {
+    this.StoreService.delete(this.currentStore._id)
+      .subscribe(
+        response => {
+          this.refreshList()
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  removeAllStores(): void {
+    this.StoreService.deleteAll()
+      .subscribe(
+        response => {
+          
+          this.refreshList();
+        },
+        error => {
+          console.log(error);
+        });
   }
 }

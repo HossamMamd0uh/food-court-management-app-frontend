@@ -16,8 +16,24 @@ export class StoreService {
   }
 
   create(store): Observable<any> {
-    console.log(store)
+
     return this.http.post(`${baseUrl}create-new-store`, {store});
+  }
+
+  get(_id): Observable<any> {
+    return this.http.get(`${baseUrl}get-single-store/${_id}`);
+  }
+
+  update(_id, store): Observable<any> {
+    return this.http.post(`${baseUrl}update-store/${_id}`, {store});
+  }
+
+  delete(_id): Observable<any> {
+    return this.http.post(`${baseUrl}delete-store/${_id}`,{});
+  }
+
+  deleteAll(): Observable<any> {
+    return this.http.post(`${baseUrl}delete-all-stores`,{});
   }
 
 }

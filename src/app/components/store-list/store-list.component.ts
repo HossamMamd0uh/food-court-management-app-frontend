@@ -28,7 +28,7 @@ export class StoresListComponent implements OnInit {
           
         },
         error => {
-          console.log(error);
+          
         });
   }
 
@@ -50,7 +50,7 @@ export class StoresListComponent implements OnInit {
           this.refreshList()
         },
         error => {
-          console.log(error);
+          
         });
   }
 
@@ -62,7 +62,7 @@ export class StoresListComponent implements OnInit {
           this.refreshList();
         },
         error => {
-          console.log(error);
+          
         });
   }
 
@@ -74,7 +74,7 @@ export class StoresListComponent implements OnInit {
           
         },
         error => {
-          console.log(error);
+          
         });
   }
 }

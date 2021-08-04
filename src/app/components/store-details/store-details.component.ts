@@ -29,7 +29,7 @@ export class StoreDetailsComponent implements OnInit {
           
         },
         error => {
-          console.log(error);
+          
         });
   }
 
@@ -42,7 +42,7 @@ export class StoreDetailsComponent implements OnInit {
           this.message = 'The store was updated successfully!';
         },
         error => {
-          console.log(error);
+          
         });
   }
 
@@ -54,7 +54,7 @@ export class StoreDetailsComponent implements OnInit {
           this.router.navigate(['/stores']);
         },
         error => {
-          console.log(error);
+          
         });
   }
 }

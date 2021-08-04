@@ -32,7 +32,7 @@ export class AddStoreComponent implements OnInit {
           this.submitted = true;
         },
         error => {
-          console.log(error);
+          
         });
   }
 

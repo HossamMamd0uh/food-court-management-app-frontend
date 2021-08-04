@@ -29,7 +29,6 @@ export class AddStoreComponent implements OnInit {
     this.storeService.create(store)
       .subscribe(
         store => {
-          console.log(store);
           this.submitted = true;
         },
         error => {

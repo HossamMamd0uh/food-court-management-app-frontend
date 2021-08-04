@@ -1,0 +1,59 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentStore" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentStore.data.storeName"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentStore.data.storeDescription"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Logo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentStore.data.storeLogo"
+          name="description"
+        />
+      </div>
+
+
+    </form>
+
+
+    <br>
+    <button class="btn btn-outline-danger" (click)="deleteStore()">
+      Delete
+    </button>
+    &nbsp;
+    <button
+      type="submit"
+      class="btn btn-outline-success"
+      (click)="updateStore()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentStore">
+    <br />
+    <p>Cannot access this Store...</p>
+  </div>
+</div>

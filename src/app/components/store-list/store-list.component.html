@@ -22,6 +22,10 @@
         {{ store.storeName }}
       </li>
     </ul>
+    <br>
+    <button class="btn btn-outline-danger" (click)="removeAllStores()">
+      Remove All
+    </button>
   </div>
   <div class="col-md-6">
     <div *ngIf="currentStore">
@@ -38,11 +42,21 @@
         <br>
         <img [src] = "currentStore.storeLogo" class="storeImage" />
       </div>
-    </div>
+      <button class="btn btn-outline-info"><a routerLink="/stores/{{ currentStore._id }}" style="text-decoration: none;">
+        Edit
+      </a></button> &nbsp;
+      <button class="btn btn-outline-danger" (click)="deleteStore()">
+        Delete
+      </button>
 
+    </div>
     <div *ngIf="!currentStore">
       <br />
       <p>Please click on a Store...</p>
+
     </div>
+
+    <br>
+
   </div>
 </div>

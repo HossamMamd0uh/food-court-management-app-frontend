@@ -14,4 +14,10 @@ export class StoreService {
   getAll(): Observable<any> {
     return this.http.get(`${baseUrl}get-all-stores`);
   }
+
+  create(store): Observable<any> {
+    console.log(store)
+    return this.http.post(`${baseUrl}create-new-store`, {store});
+  }
+
 }

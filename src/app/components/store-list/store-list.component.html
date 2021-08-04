@@ -1,0 +1,48 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Filter by name"
+        [(ngModel)]="storeName"
+      />
+
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Stores List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let store of stores; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveStore(store, i)"
+      >
+        {{ store.storeName }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentStore">
+      <h4>Store</h4>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentStore.storeName }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentStore.storeDescription }}
+      </div>
+      <div>
+        <label><strong>Logo:</strong></label>
+        <br>
+        <img [src] = "currentStore.storeLogo" class="storeImage" />
+      </div>
+    </div>
+
+    <div *ngIf="!currentStore">
+      <br />
+      <p>Please click on a Store...</p>
+    </div>
+  </div>
+</div>
